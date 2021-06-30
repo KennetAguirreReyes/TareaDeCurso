@@ -13,6 +13,7 @@ public class Distribuidora {
 	Scanner lector = new Scanner(System.in);
 	int opcion2, excep = 2;
 	//Pago de Nóminas
+	int n;
 	double salario;
 	String nombre;
 	String cargo;
@@ -21,7 +22,7 @@ public class Distribuidora {
 	double IR, montoIR;
 	double sindicato = 0.1, montoSindicato;
 	double salarioB;
-	double[] salarioN;
+	//public double salarioN[];
 	double incentivo;
 	boolean continua;
 	//Balance General
@@ -65,7 +66,7 @@ public class Distribuidora {
 	double div;
 	
 	public void ordenamiento(double A[],int n){
-		  for (int i = 1; i < n; i++) {
+		  for (int i = 0; i < n; i++) {
 			  double valorC = A[i];
 			  int posicion = i; 
 			  while((posicion > 0) && (A[posicion - 1] > valorC)) {
@@ -105,7 +106,15 @@ public class Distribuidora {
 			try {
 				continua = false;
 		System.out.println("Ingrese la Cantidad de los Trabajadores que quiere conocer el Salario Neto: ");
-		int n = lector.nextInt();
+		n = lector.nextInt();
+			} catch (InputMismatchException e) {
+				System.out.println("******El Dato que ha Ingresado es INCORRECTO******");
+				System.out.println();
+				System.out.println();
+				lector.next();
+				continua = true;
+			}
+		} while (continua);	
 		double salarioN[] = new double [n];
 		
 		
@@ -193,66 +202,7 @@ public class Distribuidora {
 			
 			
 			
-			do {
-				try {
-					continua = false;
-					System.out.println();
-					System.out.println();
-					System.out.println("¿Desea Ordenar los Salarios?");
-					System.out.println("1: Si.");
-					System.out.println("2: Deseo Buscar los Salarios.");
-					System.out.println("3: No.");
-					System.out.print("Opción: ");
-					opcion2 = lector.nextInt();
-					a: switch(opcion2) {
-					case 1:
-						System.out.println("¿De qué forma?");
-						System.out.println("1: Ascendentes.");
-						System.out.println("2: Descendente.");
-						System.out.print("Opción: ");
-						opcion2 = lector.nextInt();
-						System.out.println();
-						b: switch(opcion2) {
-							case 1: 
-								ordenamiento(salarioN, salarioN.length);
-								System.out.println("Salarios Ordenados de Manera Ascendente: ");
-								ascendente(salarioN, salarioN.length);
-								break b;
-							case 2:
-								ordenamiento(salarioN, salarioN.length);
-								System.out.println("Salarios Ordenados de Manera Descendente: ");
-								desendente(salarioN, salarioN.length);
-								break b;
-						}
-					case 2: 
-						do {
-							try {
-								continua = false;
-						System.out.println("Ingrese el Salario que desea encontrar: ");
-						double buscado = lector.nextDouble();
-						 int hallado = busquedaLineal(salarioN, salarioN.length, buscado);
-						  if (hallado != -1) {
-							  System.out.println("El Salario " + buscado + " fue encontrado en la posición " + hallado);
-						  }else {
-							  System.out.println("El Salario " + buscado + " no fue encontrado");
-						  }
-							} catch (InputMismatchException e) {
-								System.out.println("****El Dato que ha Ingresado es INCORRECTO****");
-								System.out.println();
-								lector.next();
-								continua = true;
-							}
-						} while (continua);
-						break a;			
-					}
-					} catch (InputMismatchException e) {
-						System.out.println("******El Dato que ha Ingresado es INCORRECTO******");
-						System.out.println();
-						System.out.println();
-						lector.next();
-						continua = true;
-					}
-				} while (continua);	
+				
 			
 				} catch (InputMismatchException e) {
 					System.out.println("******El Dato que ha Ingresado es INCORRECTO******");
@@ -263,14 +213,69 @@ public class Distribuidora {
 				}
 			} while (continua);	
 		}
-			} catch (InputMismatchException e) {
-				System.out.println("******El Dato que ha Ingresado es INCORRECTO******");
+			
+		
+		do {
+			try {
+				continua = false;
 				System.out.println();
 				System.out.println();
-				lector.next();
-				continua = true;
-			}
-		} while (continua);		
+				System.out.println("¿Desea Ordenar los Salarios?");
+				System.out.println("1: Si.");
+				System.out.println("2: Deseo Buscar los Salarios.");
+				System.out.println("3: No.");
+				System.out.print("Opción: ");
+				opcion2 = lector.nextInt();
+				a: switch(opcion2) {
+				case 1:
+					System.out.println("¿De qué forma?");
+					System.out.println("1: Ascendentes.");
+					System.out.println("2: Descendente.");
+					System.out.print("Opción: ");
+					opcion2 = lector.nextInt();
+					System.out.println();
+					b: switch(opcion2) {
+						case 1: 
+							ordenamiento(salarioN, salarioN.length);
+							System.out.println("Salarios Ordenados de Manera Ascendente: ");
+							ascendente(salarioN, salarioN.length);
+							break b;
+						case 2:
+							ordenamiento(salarioN, salarioN.length);
+							System.out.println("Salarios Ordenados de Manera Descendente: ");
+							desendente(salarioN, salarioN.length);
+							break b;
+					}
+				case 2: 
+					do {
+						try {
+							continua = false;
+					System.out.println("Ingrese el Salario que desea encontrar: ");
+					double buscado = lector.nextDouble();
+					 int hallado = busquedaLineal(salarioN, salarioN.length, buscado);
+					  if (hallado != -1) {
+						  System.out.println("El Salario " + buscado + " fue encontrado en la posición " + hallado);
+					  }else {
+						  System.out.println("El Salario " + buscado + " no fue encontrado");
+					  }
+						} catch (InputMismatchException e) {
+							System.out.println("****El Dato que ha Ingresado es INCORRECTO****");
+							System.out.println();
+							lector.next();
+							continua = true;
+						}
+					} while (continua);
+					break a;			
+				}
+				} catch (InputMismatchException e) {
+					System.out.println("******El Dato que ha Ingresado es INCORRECTO******");
+					System.out.println();
+					System.out.println();
+					lector.next();
+					continua = true;
+				}
+			} while (continua);
+		
 	}
 	
 	public void balanceG() {
