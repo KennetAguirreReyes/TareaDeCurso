@@ -13,12 +13,12 @@ public class ControlDeCV {
 		do {
 			excep = 2;
 		try{
-		System.out.print("Ingrese monto total de sus compras: ");
+		System.out.print("Ingrese monto total de sus compras: C$");
 		compras = entrada.nextInt();
 		
 		while(compras < 0) {
 			   System.out.println("Las compras no pueden ser negativas\n");
-			   System.out.print("Ingrese monto total de sus compras: ");
+			   System.out.print("Ingrese monto total de sus compras: C$");
 				compras = entrada.nextInt();
 			}
 		}catch(InputMismatchException ex) {
@@ -31,12 +31,12 @@ public class ControlDeCV {
 		do {
 			excep = 2;
 		try{
-		System.out.print("Ingrese monto total de sus gastos de compras: ");
+		System.out.print("Ingrese monto total de sus gastos de compras: C$");
 		gastosCompras = entrada.nextInt();
 		
 		while(gastosCompras < 0) {
 			   System.out.println("Los gastos de compras no pueden ser negativas\n");
-			   System.out.print("Ingrese monto total de sus gastos de compras: ");
+			   System.out.print("Ingrese monto total de sus gastos de compras: C$");
 				gastosCompras = entrada.nextInt();
 			}
 		}catch(InputMismatchException ex) {
@@ -49,12 +49,12 @@ public class ControlDeCV {
 		do {
 			excep = 2;
 		try{
-		System.out.print("Ingrese monto total de las devoluciones sobre compra: ");
+		System.out.print("Ingrese monto total de las devoluciones sobre compra: C$");
 		devolucionesSC = entrada.nextInt();
 		
 		while(devolucionesSC < 0) {
 			   System.out.println("Las devoluciones sobre compra no pueden ser negativas\n");
-			   System.out.print("Ingrese monto total de las devoluciones sobre compra: ");
+			   System.out.print("Ingrese monto total de las devoluciones sobre compra: C$");
 				devolucionesSC = entrada.nextInt();
 			}
 		}catch(InputMismatchException ex) {
@@ -67,12 +67,12 @@ public class ControlDeCV {
 		do {
 			excep = 2;
 		try{
-		System.out.print("Ingrese monto total de los descuentos sobre compra: ");
+		System.out.print("Ingrese monto total de los descuentos sobre compra: C$");
 		descuentosSC = entrada.nextInt();
 		
 		while(descuentosSC < 0) {
 			   System.out.println("Los descuentos sobre compra no pueden ser negativas\n");
-			   System.out.print("Ingrese monto total de los descuentos sobre compra: ");
+			   System.out.print("Ingrese monto total de los descuentos sobre compra: C$");
 				descuentosSC = entrada.nextInt();
 			}
 		}catch(InputMismatchException ex) {
@@ -90,12 +90,12 @@ public class ControlDeCV {
 			do {
 				excep = 2;
 			try{
-			System.out.print("Ingrese monto total de las devoluciones sobre compra: ");
+			System.out.print("Ingrese monto total de las devoluciones sobre compra: C$");
 			devolucionesSC = entrada.nextInt();
 			
 			while(devolucionesSC < 0) {
 				   System.out.println("Las devoluciones sobre compra no pueden ser negativas\n");
-				   System.out.print("Ingrese monto total de las devoluciones sobre compra: ");
+				   System.out.print("Ingrese monto total de las devoluciones sobre compra: C$");
 					devolucionesSC = entrada.nextInt();
 				}
 			}catch(InputMismatchException ex) {
@@ -108,12 +108,12 @@ public class ControlDeCV {
 			do {
 				excep = 2;
 			try{
-			System.out.print("Ingrese monto total de los descuentos sobre compra: ");
+			System.out.print("Ingrese monto total de los descuentos sobre compra: C$");
 			descuentosSC = entrada.nextInt();
 			
 			while(descuentosSC < 0) {
 				   System.out.println("Los descuentos sobre compra no pueden ser negativas\n");
-				   System.out.print("Ingrese monto total de los descuentos sobre compra: ");
+				   System.out.print("Ingrese monto total de los descuentos sobre compra: C$");
 					descuentosSC = entrada.nextInt();
 				}
 			}catch(InputMismatchException ex) {
@@ -129,11 +129,11 @@ public class ControlDeCV {
 		
 		System.out.println("\n-----Control de compras-----\n");
 		totalCompras = compras + gastosCompras;
-		System.out.println("Total de compras = " + compras + " + " + gastosCompras);
-		System.out.println("Total de compras = " + totalCompras);
+		System.out.println("Total de compras = C$" + compras + " + C$" + gastosCompras);
+		System.out.println("Total de compras = C$" + totalCompras);
 		comprasNetas = totalCompras - devolucionesSC - descuentosSC ;
-		System.out.println("\nCompras netas = " + totalCompras + " - " + devolucionesSC + " - " + descuentosSC);
-		System.out.println("Compras netas = " + comprasNetas + "\n");
+		System.out.println("\nCompras netas = C$" + totalCompras + " - C$" + devolucionesSC + " - C$" + descuentosSC);
+		System.out.println("Compras netas = C$" + comprasNetas + "\n");
 		
 	}
 	
@@ -142,12 +142,12 @@ public class ControlDeCV {
 		do {
 			excep = 2;
 		try{
-		System.out.print("Ingrese monto total de sus ventas: ");
+		System.out.print("Ingrese monto total de sus ventas: C$");
 		ventas = entrada.nextInt();
 		
 		while(ventas < 0) {
 			   System.out.println("Las ventas no pueden ser negativas\n");
-			   System.out.print("Ingrese monto total de sus ventas: ");
+			   System.out.print("Ingrese monto total de sus ventas: C$");
 				ventas = entrada.nextInt();
 			}
 		}catch(InputMismatchException ex) {
@@ -160,12 +160,12 @@ public class ControlDeCV {
 		do {
 			excep = 2;
 		try{
-		System.out.print("Ingrese monto total de las devoluciones sobre venta: ");
+		System.out.print("Ingrese monto total de las devoluciones sobre venta: C$");
 		devolucionesSV = entrada.nextInt();
 		
 		while(devolucionesSV < 0) {
 			   System.out.println("Las devoluciones sobre ventas no pueden ser negativas\n");
-			   System.out.print("Ingrese monto total de las devoluciones sobre venta: ");
+			   System.out.print("Ingrese monto total de las devoluciones sobre venta: C$");
 				devolucionesSV = entrada.nextInt();
 			}
 		}catch(InputMismatchException ex) {
@@ -178,12 +178,12 @@ public class ControlDeCV {
 		do {
 			excep = 2;
 		try{
-		System.out.print("Ingrese monto total de los descuentos sobre venta: ");
+		System.out.print("Ingrese monto total de los descuentos sobre venta: C$");
 		descuentosSV = entrada.nextInt();
 		
 		while(descuentosSV < 0) {
 			   System.out.println("Las descuentos sobre ventas no pueden ser negativas\n");
-			   System.out.print("Ingrese monto total de los descuentos sobre venta: ");
+			   System.out.print("Ingrese monto total de los descuentos sobre venta: C$");
 				descuentosSV = entrada.nextInt();
 			}
 		}catch(InputMismatchException ex) {
@@ -199,12 +199,12 @@ public class ControlDeCV {
 			do {
 				excep = 2;
 			try{
-			System.out.print("Ingrese monto total de las devoluciones sobre venta: ");
+			System.out.print("Ingrese monto total de las devoluciones sobre venta: C$");
 			devolucionesSV = entrada.nextInt();
 			
 			while(devolucionesSV < 0) {
 				   System.out.println("Las devoluciones sobre ventas no pueden ser negativas\n");
-				   System.out.print("Ingrese monto total de las devoluciones sobre venta: ");
+				   System.out.print("Ingrese monto total de las devoluciones sobre venta: C$");
 					devolucionesSV = entrada.nextInt();
 				}
 			}catch(InputMismatchException ex) {
@@ -217,12 +217,12 @@ public class ControlDeCV {
 			do {
 				excep = 2;
 			try{
-			System.out.print("Ingrese monto total de los descuentos sobre venta: ");
+			System.out.print("Ingrese monto total de los descuentos sobre venta: C$");
 			descuentosSV = entrada.nextInt();
 			
 			while(descuentosSV < 0) {
 				   System.out.println("Las descuentos sobre ventas no pueden ser negativas\n");
-				   System.out.print("Ingrese monto total de los descuentos sobre venta: ");
+				   System.out.print("Ingrese monto total de los descuentos sobre venta: C$");
 					descuentosSV = entrada.nextInt();
 				}
 			}catch(InputMismatchException ex) {
@@ -237,10 +237,10 @@ public class ControlDeCV {
 	public void mostrarControlDeVentas() {
 		
 		System.out.println("\n-----Control de ventas-----\n");
-		System.out.println("Total de ventas = " + ventas);
+		System.out.println("Total de ventas = C$" + ventas);
 		ventasNetas = ventas - devolucionesSV - descuentosSV;
-		System.out.println("\nVentas netas = " + ventas + " - " + devolucionesSV + " - " + descuentosSV);
-		System.out.println("Ventas netas = " + ventasNetas + "\n");
+		System.out.println("\nVentas netas = C$" + ventas + " - C$" + devolucionesSV + " - C$" + descuentosSV);
+		System.out.println("Ventas netas = C$" + ventasNetas + "\n");
 		
 	}
 

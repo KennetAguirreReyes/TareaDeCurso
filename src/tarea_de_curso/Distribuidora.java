@@ -59,6 +59,11 @@ public class Distribuidora {
 	double luz2;
 	double intereses;
 	
+	//vaciacion de capital
+	double capitalS;
+	double util;
+	double div;
+	
 	public void ordenamiento(double A[],int n){
 		  for (int i = 1; i < n; i++) {
 			  double valorC = A[i];
@@ -283,18 +288,58 @@ public class Distribuidora {
 		System.out.println("¿Tiene algún monto en la cuenta de Caja?, Ingreselo.");
 		System.out.print("Caja: C$");
 		caja = lector.nextDouble();
+		
+		while(caja < 0) {
+			   System.out.println("El monto de caja no puede ser negativo\n");
+			   System.out.println("¿Tiene algún monto en la cuenta de Caja?, Ingreselo.");
+				System.out.print("Caja: C$");
+				caja = lector.nextDouble();
+			}
+		
 		System.out.println("¿Tiene algún monto en la cuenta de Banco?, Ingreselo.");
 		System.out.print("Banco:  C$");
 		banco = lector.nextDouble();
+		
+		while(banco < 0) {
+			   System.out.println("El monto de banco no puede ser negativo\n");
+			   System.out.println("¿Tiene algún monto en la cuenta de Banco?, Ingreselo.");
+				System.out.print("Banco:  C$");
+				banco = lector.nextDouble();
+			}
+		
 		System.out.println("¿Tiene algún monto en la cuenta de Mercancía?(lo que se tiene en inventario), Ingreselo.");
 		System.out.print("Mercancía:  C$");
 		mercancia = lector.nextDouble();
+		
+		while(mercancia < 0) {
+			   System.out.println("El monto de mercancia no puede ser negativo\n");
+			   System.out.println("¿Tiene algún monto en la cuenta de Mercancía?(lo que se tiene en inventario), Ingreselo.");
+				System.out.print("Mercancía:  C$");
+				mercancia = lector.nextDouble();
+			}
+		
 		System.out.println("¿Tiene algún monto en la cuenta de Clientes?(El total del dinero de ventas a Crédito y que aun no se ha recibido), Ingreselo.");
 		System.out.print("Clientes:  C$");
 		clientes = lector.nextDouble();
+		
+		while(clientes < 0) {
+			   System.out.println("El monto de clientes no puede ser negativo\n");
+			   System.out.println("¿Tiene algún monto en la cuenta de Clientes?(El total del dinero de ventas a Crédito y que aun no se ha recibido), Ingreselo.");
+				System.out.print("Clientes:  C$");
+				clientes = lector.nextDouble();
+			}
+		
 		System.out.println("¿Tiene algún monto en la cuenta de Documentos por Cobrar?(es toda deuda que le deben a su empresa y por ella a firmó un contrato), Ingreselo.");
 		System.out.print("Documentos por Cobrar:  C$");
 		documenxcob = lector.nextDouble();
+		
+		while(documenxcob < 0) {
+			   System.out.println("El monto de cuenta de Documentos por Cobrar no puede ser negativo\n");
+			   System.out.println("¿Tiene algún monto en la cuenta de Documentos por Cobrar?(es toda deuda que le deben a su empresa y por ella a firmó un contrato), Ingreselo.");
+				System.out.print("Documentos por Cobrar:  C$");
+				documenxcob = lector.nextDouble();
+			}
+		
 			} catch (InputMismatchException e) {
 				System.out.println("******El Dato que ha Ingresado es INCORRECTO******");
 				System.out.println();
@@ -310,21 +355,69 @@ public class Distribuidora {
 		System.out.println("¿Tiene algún monto en la cuenta de Terreno?(Total de dinero equivalente a lo que cuesta el Terreno donde se encuentra la empresa), Ingreselo.");
 		System.out.print("Terreno:  C$");
 		terreno = lector.nextDouble();
+		
+		while(terreno < 0) {
+			   System.out.println("El monto de terreno no puede ser negativo\n");
+			   System.out.println("¿Tiene algún monto en la cuenta de Terreno?(Total de dinero equivalente a lo que cuesta el Terreno donde se encuentra la empresa), Ingreselo.");
+				System.out.print("Terreno:  C$");
+				terreno = lector.nextDouble();
+			}
+		
 		System.out.println("¿Tiene algún monto en la cuenta de Edificio?(Total de dinero equivalente a lo que cuesta el Edificio donde se encuentra la empresa), Ingreselo.");
 		System.out.print("Edificio:  C$");
 		edificio = lector.nextDouble();
+		
+		while(edificio < 0) {
+			   System.out.println("El monto de edificio no puede ser negativo\n");
+			   System.out.println("¿Tiene algún monto en la cuenta de Edificio?(Total de dinero equivalente a lo que cuesta el Edificio donde se encuentra la empresa), Ingreselo.");
+				System.out.print("Edificio:  C$");
+				edificio = lector.nextDouble();
+			}
+		
 		System.out.println("¿Tiene algún monto en la cuenta de Equipo de Oficina?(Total de dinero equivalente al Equipo de Oficina), Ingreselo.");
 		System.out.print("Equipo de Oficina:  C$");
 		equipodeOf = lector.nextDouble();
+		
+		while(equipodeOf < 0) {
+			   System.out.println("El monto de equipo de oficina no puede ser negativo\n");
+			   System.out.println("¿Tiene algún monto en la cuenta de Equipo de Oficina?(Total de dinero equivalente al Equipo de Oficina), Ingreselo.");
+				System.out.print("Equipo de Oficina:  C$");
+				equipodeOf = lector.nextDouble();
+			}
+		
 		System.out.println("¿Tiene algún monto en la cuenta de Equipo de Cómputo?(Total de dinero equivalente al Equipo de Cómputo), Ingreselo.");
 		System.out.print("Equipo de Cómputo:  C$");
 		equipodeCom = lector.nextDouble();
+		
+		while(equipodeOf < 0) {
+			   System.out.println("El monto de equipo de Equipo de Cómputo no puede ser negativo\n");
+			   System.out.println("¿Tiene algún monto en la cuenta de Equipo de Cómputo?(Total de dinero equivalente al Equipo de Cómputo), Ingreselo.");
+				System.out.print("Equipo de Cómputo:  C$");
+				equipodeOf = lector.nextDouble();
+			}
+		
 		System.out.println("¿Tiene algún monto en la cuenta de Propaganda?(Si la empresa gasta en Propaganda y Publicidad), Ingreselo.");
 		System.out.print("Propaganda:  C$");
 		propaganda = lector.nextDouble();
+		
+		while(propaganda < 0) {
+			   System.out.println("El monto de propaganda no puede ser negativo\n");
+			   System.out.println("¿Tiene algún monto en la cuenta de Propaganda?(Si la empresa gasta en Propaganda y Publicidad), Ingreselo.");
+				System.out.print("Propaganda:  C$");
+				propaganda = lector.nextDouble();
+			}
+		
 		System.out.println("¿Tiene algún monto en la cuenta de Papelería?, Ingreselo.");
 		System.out.print("Papelería:  C$");
 		papeleria = lector.nextDouble();
+		
+		while(papeleria < 0) {
+			   System.out.println("El monto de papeleria no puede ser negativo\n");
+			   System.out.println("¿Tiene algún monto en la cuenta de Papelería?, Ingreselo.");
+				System.out.print("Papelería:  C$");
+				papeleria = lector.nextDouble();
+			}
+		
 			} catch (InputMismatchException e) {
 				System.out.println("******El Dato que ha Ingresado es INCORRECTO******");
 				System.out.println();
@@ -342,12 +435,36 @@ public class Distribuidora {
 		System.out.println("¿Tiene algún monto en la cuenta de Proveedores?(Es lo que se le debe a una empresa que abastece lo necesario para la actividad principal de su empresa), Ingreselo.");
 		System.out.print("Proveedores:  C$");
 		proveedores = lector.nextDouble();
+		
+		while(proveedores < 0) {
+			   System.out.println("El monto de proveedores no puede ser negativo\n");
+			   System.out.println("¿Tiene algún monto en la cuenta de Proveedores?(Es lo que se le debe a una empresa que abastece lo necesario para la actividad principal de su empresa), Ingreselo.");
+				System.out.print("Proveedores:  C$");
+				proveedores = lector.nextDouble();
+			}
+		
 		System.out.println("¿Tiene algún monto en la cuenta de Acreedores?,(Es a aquella Organización que se le debe dinero de un prestamo bancario) Ingreselo.");
 		System.out.print("Acreedores:  C$");
 		acreedores = lector.nextDouble();
+		
+		while(acreedores < 0) {
+			   System.out.println("El monto de acreedores no puede ser negativo\n");
+			   System.out.println("¿Tiene algún monto en la cuenta de Acreedores?,(Es a aquella Organización que se le debe dinero de un prestamo bancario) Ingreselo.");
+				System.out.print("Acreedores:  C$");
+				acreedores = lector.nextDouble();
+			}
+		
 		System.out.println("¿Tiene algún monto en la cuenta de Documentos por Pagar?(es toda deuda que tiene la empresa y por el a firmó un contrato), Ingreselo.");
 		System.out.print("Documentos por Pagar:  C$");
 		documenxpag = lector.nextDouble();
+		
+		while(documenxpag < 0) {
+			   System.out.println("El monto de Documentos por Pagar no puede ser negativo\n");
+			   System.out.println("¿Tiene algún monto en la cuenta de Documentos por Pagar?(es toda deuda que tiene la empresa y por el a firmó un contrato), Ingreselo.");
+				System.out.print("Documentos por Pagar:  C$");
+				documenxpag = lector.nextDouble();
+			}
+		
 			} catch (InputMismatchException e) {
 				System.out.println("******El Dato que ha Ingresado es INCORRECTO******");
 				System.out.println();
@@ -389,22 +506,85 @@ public class Distribuidora {
 				nombreEmpre = entrada.nextLine();
 				System.out.print("Ingrese el monto Total de sus Ventas: C$");
 				ventas = lector.nextDouble();
+				
+				while(ventas < 0) {
+					   System.out.println("El monto de ventas no puede ser negativo\n");
+					   System.out.print("Ingrese el monto Total de sus Ventas: C$");
+						ventas = lector.nextDouble();
+					}
+				
 				System.out.print("Ingrese el monto Total de las Devoluciones de las Ventas(Sino hubieron Ingresar 0): C$");
 				devo = lector.nextDouble();
+				
+				while(devo < 0) {
+					   System.out.println("El monto Total de las Devoluciones de las Ventas no puede ser negativo\n");
+					   System.out.print("Ingrese el monto Total de las Devoluciones de las Ventas(Sino hubieron Ingresar 0): C$");
+						devo = lector.nextDouble();
+					}
+				
 				System.out.print("Ingrese el monto Total de las Rebajas de las Ventas(Sino hubieron Ingresar 0): C$");
 				rebajas = lector.nextDouble();
+				
+				while(rebajas < 0) {
+					   System.out.println("El monto Total de las Rebajas de las Ventas no puede ser negativo\n");
+					   System.out.print("Ingrese el monto Total de las Rebajas de las Ventas(Sino hubieron Ingresar 0): C$");
+						rebajas = lector.nextDouble();
+					}
+				
 				System.out.print("Ingrese el monto Total de su Inventario Inicial: C$");
 				invIni = lector.nextDouble();
+				
+				while(rebajas < 0) {
+					   System.out.println("El monto Total de las Rebajas de las Ventas no puede ser negativo\n");
+					   System.out.print("Ingrese el monto Total de las Rebajas de las Ventas(Sino hubieron Ingresar 0): C$");
+						rebajas = lector.nextDouble();
+					}
+				
 				System.out.print("Ingrese el monto Total de sus Compras: C$");
 				compras = lector.nextDouble();
+				
+				while(rebajas < 0) {
+					   System.out.println("El monto Total de las Rebajas de las Ventas no puede ser negativo\n");
+					   System.out.print("Ingrese el monto Total de las Rebajas de las Ventas(Sino hubieron Ingresar 0): C$");
+						rebajas = lector.nextDouble();
+					}
+				
 				System.out.print("Ingrese el monto Total de sus Gastos de Compras: C$");
 				gastos = lector.nextDouble();
+				
+				while(gastos < 0) {
+					   System.out.println("El monto Total de sus Gastos de Compras no puede ser negativo\n");
+					   System.out.print("Ingrese el monto Total de sus Gastos de Compras: C$");
+						gastos = lector.nextDouble();
+					}
+				
 				System.out.print("Ingrese el monto Total de las Devoluciones de las Compras(Sino hubieron Ingresar 0): C$");
 				devoC = lector.nextDouble();
+				
+				while(gastos < 0) {
+					   System.out.println("El monto Total de sus Gastos de Compras no puede ser negativo\n");
+					   System.out.print("Ingrese el monto Total de sus Gastos de Compras: C$");
+						gastos = lector.nextDouble();
+					}
+				
 				System.out.print("Ingrese el monto Total de las Rebajas de las Compras(Sino hubieron Ingresar 0): C$");
 				rebajasC = lector.nextDouble();
+				
+				while(rebajasC < 0) {
+					   System.out.println("El monto Total de las Rebajas de las Compras no puede ser negativo\n");
+					   System.out.print("Ingrese el monto Total de las Rebajas de las Compras(Sino hubieron Ingresar 0): C$");
+						rebajasC = lector.nextDouble();
+					}
+				
 				System.out.print("Ingrese el monto Total de su Inventario Final: C$");
 				invFin = lector.nextDouble();
+				
+				while(invFin < 0) {
+					   System.out.println("El monto Total de su Inventario Final no puede ser negativo\n");
+					   System.out.print("Ingrese el monto Total de su Inventario Final: C$");
+						invFin = lector.nextDouble();
+					}
+				
 					} catch (InputMismatchException e) {
 						System.out.println("******El Dato que ha Ingresado es INCORRECTO******");
 						System.out.println();
@@ -419,18 +599,58 @@ public class Distribuidora {
 					continua = false;
 				System.out.print("Ingrese el monto Total por la renta de Almacén: C$");
 				almacen = lector.nextDouble();
+				
+				while(almacen < 0) {
+					   System.out.println("El monto Total por la renta de Almacén no puede ser negativo\n");
+					   System.out.print("Ingrese el monto Total por la renta de Almacén: C$");
+						almacen = lector.nextDouble();
+					}
+				
 				System.out.print("Ingrese el monto Total por el consumo de Luz: C$");
 				luz = lector.nextDouble();
+				
+				while(luz < 0) {
+					   System.out.println("El monto Total por el consumo de Luz no puede ser negativo\n");
+					   System.out.print("Ingrese el monto Total por el consumo de Luz: C$");
+						luz = lector.nextDouble();
+					}
+				
 				System.out.print("Ingrese el monto Total por las comisiones de Agentes y Vendedores: C$");
 				comis = lector.nextDouble();
 				
+				while(comis < 0) {
+					   System.out.println("El monto Total por las comisiones de Agentes y Vendedores no puede ser negativo\n");
+					   System.out.print("Ingrese el monto Total por las comisiones de Agentes y Vendedores: C$");
+						comis = lector.nextDouble();
+					}
+				
 				System.out.print("Ingrese el monto Total por el consumo de Papelería: C$");
 				papeleria = lector.nextDouble();
+				
+				while(papeleria < 0) {
+					   System.out.println("El monto Total por el consumo de Papelería no puede ser negativo\n");
+					   System.out.print("Ingrese el monto Total por el consumo de Papelería: C$");
+						papeleria = lector.nextDouble();
+					}
+				
 				System.out.print("Ingrese el monto Total por el consumo de Luz: C$");
 				luz2 = lector.nextDouble();
+				
+				while(luz2 < 0) {
+					   System.out.println("El monto Total por el consumo de Luz no puede ser negativo\n");
+					   System.out.print("Ingrese el monto Total por el consumo de Luz: C$");
+						luz2 = lector.nextDouble();
+					}
 			
 				System.out.print("Ingrese el monto Total de interes cobrados: C$");
 				intereses = lector.nextDouble();
+				
+				while(intereses < 0) {
+					   System.out.println("El monto Total de interes cobrados no puede ser negativo\n");
+					   System.out.print("Ingrese el monto Total de interes cobrados: C$");
+						intereses = lector.nextDouble();
+					}
+				
 					} catch (InputMismatchException e) {
 						System.out.println("******El Dato que ha Ingresado es INCORRECTO******");
 						System.out.println();
@@ -470,12 +690,60 @@ public class Distribuidora {
 	}
 	
 	public void variac() {
+		do {
+			excep = 2;
+		try{
 		System.out.print("Ingrese el Capital Social: C$");
-		double capitalS= lector.nextDouble();
+		capitalS= lector.nextDouble();
+		
+		while(capitalS < 0) {
+			   System.out.println("El capital social no puede ser negativo\n");
+			   System.out.print("Ingrese el Capital Social: C$");
+				capitalS= lector.nextDouble();
+			}
+		}catch(InputMismatchException ex) {
+			System.out.println("Debe de introducir un entero o decimal\n");
+			lector.nextLine();
+			excep = 1;
+		}
+		}while(excep != 2);
+		
+		do {
+			excep = 2;
+		try{
 		System.out.print("Ingrese la Utilidad del Ejercicio: C$");
-		double util = lector.nextDouble();
+		util = lector.nextDouble();
+		
+		while(util < 0) {
+			   System.out.println("La utilidad del ejercicio no puede ser negativo\n");
+			   System.out.print("Ingrese la Utilidad del Ejercicio: C$");
+				util = lector.nextDouble();
+			}
+		}catch(InputMismatchException ex) {
+			System.out.println("Debe de introducir un entero o decimal\n");
+			lector.nextLine();
+			excep = 1;
+		}
+		}while(excep != 2);
+		
+		do {
+			excep = 2;
+		try{
 		System.out.print("Ingrese los Dividendos: C$");
-		double div= lector.nextDouble();
+		div = lector.nextDouble();
+		
+		while(div < 0) {
+			   System.out.println("Los dividendos no puede ser negativo\n");
+			   System.out.print("Ingrese los Dividendos: C$");
+				div = lector.nextDouble();
+			}
+		}catch(InputMismatchException ex) {
+			System.out.println("Debe de introducir un entero o decimal\n");
+			lector.nextLine();
+			excep = 1;
+		}
+		}while(excep != 2);
+		
 		double utilR= capitalS + util - div;
 		System.out.println("\t"+"\t"+"VARIACIÓN DE CAPITAL"+"\t"+"\t"+"\t"+"\n"+"Capital Social"+"\t"+"\t"+"\t"+" C$"+capitalS+"\n"+"Utilidad del Ejercicio"+"\t"+"\t"+" C$"+util+"\n"+"Dividendos"+"\t"+"\t"+"\t"+" C$"+div+"\n"+"Utilidad Retenida"+"\t"+"\t"+" C$"+utilR);
 	}
