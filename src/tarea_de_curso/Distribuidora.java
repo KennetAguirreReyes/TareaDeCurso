@@ -11,7 +11,7 @@ public class Distribuidora {
 	SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yy");
 	String fechaActual = sdf.format(fecha);
 	Scanner lector = new Scanner(System.in);
-	int opcion2;
+	int opcion2, excep = 2;
 	//Pago de Nóminas
 	double salario;
 	String nombre;
@@ -21,7 +21,7 @@ public class Distribuidora {
 	double IR, montoIR;
 	double sindicato = 0.1, montoSindicato;
 	double salarioB;
-	double[] salarioN = new double [1];
+	double[] salarioN;
 	double incentivo;
 	boolean continua;
 	//Balance General
@@ -94,30 +94,61 @@ public class Distribuidora {
 		return -1;
 	}
 
-	public void calcsalario() {
+	public void calcsalario() {//acordarse de agregar los while y los trycatch y agrege entrada en argo linea 114 que sin eso se jode
 
 		do {
 			try {
 				continua = false;
 		System.out.println("Ingrese la Cantidad de los Trabajadores que quiere conocer el Salario Neto: ");
 		int n = lector.nextInt();
-		double cant [] = new double [n];
+		double salarioN[] = new double [n];
 		
-		for (int i = 0 ; i < cant.length; i++) {
+		
+		for (int i = 0 ; i < n; i++) {
 			do {
 				try {
 					continua = false;
 			System.out.println("Ingrese el nombre del Trabajador: ");
-			lector.nextLine();
-			String nombre = lector.nextLine();
+			//lector.nextLine();
+			String nombre = entrada.nextLine();
 			System.out.println("Ingrese el Cargo del Trabajador " + nombre);
-			String cargo = lector.nextLine();
+			String cargo = entrada.nextLine();
+			
+			do {
+				excep = 2;
+			try{
 			System.out.print("Ingrese el Salario del Trabajador: C$ ");
 			salario = lector.nextDouble();
+			
+			while(salario < 0) {
+				   System.out.println("El salario no puede ser negativa\n");
+				   System.out.print("Ingrese el Salario del Trabajador: C$ ");
+					salario = lector.nextDouble();
+				}
+			}catch(InputMismatchException ex) {
+				System.out.println("Debe de introducir uno de los numeros indicados en la aplicacion\n");
+				entrada.nextLine();
+				excep = 1;
+			}
+			}while(excep != 2);
+			
 			System.out.print("Ingrese el Bono del Trabajador(Sino no tiene, Ingresar O): C$ ");
 			bono = lector.nextDouble();
+			
+			while(bono < 0) {
+				   System.out.println("El bono no puede ser negativa\n");
+				   System.out.print("Ingrese el Bono del Trabajador(Sino no tiene, Ingresar O): C$ ");
+					bono = lector.nextDouble();
+				}
+			
 			System.out.print("Ingrese el Incentivo del Trabajador(Sino no tiene, Ingresar O): C$ ");
 			incentivo = lector.nextDouble();
+			
+			while(incentivo < 0) {
+				   System.out.println("El incentivo no puede ser negativa\n");
+				   System.out.print("Ingrese el Incentivo del Trabajador(Sino no tiene, Ingresar O): C$ ");
+					incentivo = lector.nextDouble();
+				}
 			
 			if (salario == 1 && salario >= 8333.33) {
 				IR = 0;
