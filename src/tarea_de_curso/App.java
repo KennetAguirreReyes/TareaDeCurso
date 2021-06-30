@@ -44,8 +44,7 @@ public class App{
 						System.out.println("1: Pago de Nóminas.");
 						System.out.println("2: Estados financieros.");
 						System.out.println("3: Control de Compra y venta");
-						System.out.println("4: ");
-						System.out.println("5: Salir. ");
+						System.out.println("4: Salir. ");
 						System.out.print("Opción: ");
 						opcion1 = lector.nextInt();
 						System.out.println();
@@ -166,8 +165,6 @@ public class App{
 												}
 											}
 											obj.variac();
-											break b;
-										case 4:
 											break b;
 										case 5:
 											opcion = 2;
