@@ -1,0 +1,14 @@
+
+Que es un Activo?
+Es un recurso con valor que alguien posee con la intencion de que genere un beneficio futuro(sea economico o no).
+Se Clasifican en: Activos Circulantes, fijos, intangibles.
+
+Que es un Pasivo?
+Representa las deudas y obligaciones con los que una empresa financia su actividad y le sirve para pagar su activo.
+Se Clasifican en: Circulantes, fijos, intangibles.
+
+Que es Capital Contable?
+Es un concepto referente a la diferencia existente entre el Activo y el Pasivo de una empresa.
+
+Que es Balance General?
+Este documento presenta los activos y pasivos, asi como las aportaciones de los socios y las ganancias que se han generado.

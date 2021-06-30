@@ -1,0 +1,9 @@
+
+Que son ingresos?
+Son los recursos que recibe el negocio por la venta de un servicio o producto, en efectivo o credito.
+
+Que son gastos?
+Son activos que se han usado o consumido en el negocio, con el fin de obtener ingresos.
+
+Que es Estado de Resultado?
+Es la que muestra una composicion entre los ingresos obtenidos con los costos que genera la empresa, para sacar los beneficios.
